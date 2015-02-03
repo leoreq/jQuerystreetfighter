@@ -38,6 +38,25 @@ console.log("ready");
   $('.ryu-ready').show();
   });
  
+$( document ).keydown(function(event) {
+  if (event.which==88) {
+    	event.preventDefault();
+   		console.log( "you frikin cooled it")  ;
+   		$('.ryu-still').hide();
+  		$('.ryu-ready').hide();
+  		$('.ryu-cool').show();
+		}
+	})
+	.keyup(function(event) {
+	  if (event.which==88) {
+	    	event.preventDefault();
+	   		console.log( "you frikin stopped being cool")  ;
+	   		$('.ryu-still').show();
+	  		$('.ryu-cool').hide();
+			}
+		})
+
+;
 
 });
 
