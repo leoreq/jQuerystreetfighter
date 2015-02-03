@@ -18,10 +18,18 @@ console.log("ready");
     // show hadouken and animate it to the right of the screen
   
   	console.log("Hadouken has been invoked");
+   playHadouken();
    $('div.ryu-ready').hide() ;
 
    $('div.ryu-throwing').show() ;
-   $('div.hadouken').show() ;
+   $('div.hadouken').finish().show().animate(
+  		{'left':'300px'},
+  		500,
+  		function(){
+  			$(this).hide();
+  			$(this).css('left','-127px');
+  		}
+  	); 
   })
   .mouseup(function() {
     console.log('mouseup');
@@ -32,3 +40,9 @@ console.log("ready");
  
 
 });
+
+function playHadouken () {
+  $('#hadouken-sound')[0].volume = 0.5;
+  $('#hadouken-sound')[0].load();
+  $('#hadouken-sound')[0].play();
+}
