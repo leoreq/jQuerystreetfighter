@@ -1,5 +1,6 @@
 body {
 	background-color:black;
+	font-family: 'Covered By Your Grace', cursive;
 }
 
 .main {
@@ -8,6 +9,16 @@ body {
   padding-left: 100px;
   min-width: 1200px;
   height: 500px;
+}
+
+.text-container {
+  background-color: white;
+  position:absolute;
+ float: right;
+ height: 500px;
+ width:500px;
+ left:650px;
+
 }
 
 .ryu {
@@ -57,9 +68,16 @@ margin-left: -127px;*/
   top: 169px;
   left: -127px;
   float: left;
+  z-index: 10;
 }
-/*
+
+.sf-logo {
+  background-image: url('../images/sf-logo.png');
+width:487px;
+height:310px;
+margin-top:95px;
+}
+
 * {
   outline: red 1px solid;
 }	
-*/
