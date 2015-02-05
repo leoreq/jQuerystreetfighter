@@ -1,6 +1,11 @@
 $(document).ready(function() {
 console.log("ready");
-
+$( ".sf-logo" ).fadeIn(  2000, function() {
+    // Animation complete
+    $( ".sf-logo" ).fadeOut( 1000, function() {
+    // Animation complete.
+  });
+  });
   $('.ryu').mouseenter(function() {
   	console.log("Mouse has entered ryu");
    $('div.ryu-still').hide() ;

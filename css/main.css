@@ -76,7 +76,9 @@ margin-left: -127px;*/
 width:487px;
 height:310px;
 margin-top:95px;
+display: none;
 }
+
 
 * {
   outline: red 1px solid;
