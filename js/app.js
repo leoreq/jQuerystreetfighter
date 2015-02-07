@@ -1,46 +1,58 @@
 $(document).ready(function() {
-console.log("ready");
-$( ".sf-logo" ).fadeIn(  2000, function() {
-    // Animation complete
-    $( ".sf-logo" ).fadeOut( 1000, function() {
-    // Animation complete.
-  });
-  });
+//actions that happen immediately after document is loaded
+
+	console.log("ready");
+	//show SF Logo
+	$( ".sf-logo" ).fadeIn(  2000, function() {
+	    // After SF Logo Finishess fading in it will fade out
+
+	$( ".sf-logo" ).fadeOut( 1000, function() {
+	    // Animation complete then instructions.
+	    $( ".instructions" ).fadeIn( 2000, function() {
+	    // No mor things.
+	 	});
+	  });
+	    /*fade in the instructions*/
+
+	  });
+
+//Events that affect RYU div with mouse actions
   $('.ryu').mouseenter(function() {
-  	console.log("Mouse has entered ryu");
-   $('div.ryu-still').hide() ;
-   $('div.ryu-ready').show() ;
-  })
+	  	console.log("Mouse has entered ryu");
+	   $('div.ryu-still').hide() ;
+	   $('div.ryu-ready').show() ;
+	  })
 
- .mouseleave(function() {
-  	console.log("Mouse has left ryu");
-   $('div.ryu-still').show() ;
-   $('div.ryu-ready').hide() ;
- })
+	 .mouseleave(function() {
+	  	console.log("Mouse has left ryu");
+	   $('div.ryu-still').show() ;
+	   $('div.ryu-ready').hide() ;
+	 })
 
-   .mousedown(function() {
-   // play hadouken sound
-    // show hadouken and animate it to the right of the screen
-  
-  	console.log("Hadouken has been invoked");
-   playHadouken();
-   $('div.ryu-ready').hide() ;
+	   .mousedown(function() {
+	   // play hadouken sound
+	    // show hadouken and animate it to the right of the screen
+	  
+	  	console.log("Hadouken has been invoked");
+	   playHadouken();
+	   $('div.ryu-ready').hide() ;
 
-   $('div.ryu-throwing').show() ;
-   $('div.hadouken').finish().show().animate(
-  		{'left':'300px'},
-  		500,
-  		function(){
-  			$(this).hide();
-  			$(this).css('left','-127px');
-  		}
-  	); 
-  })
-  .mouseup(function() {
-    console.log('mouseup');
-    // ryu goes back to his ready position
-  $('.ryu-throwing').hide();
-  $('.ryu-ready').show();
+	   $('div.ryu-throwing').show() ;
+	   $('div.hadouken').finish().show().animate(
+	  		{'left':'300px'},
+	  		500,
+	  		function(){
+	  			$(this).hide();
+	  			$(this).css('left','-127px');
+	  		}
+	  	); 
+	  })
+
+	  .mouseup(function() {
+	    console.log('mouseup');
+	    // ryu goes back to his ready position
+	  $('.ryu-throwing').hide();
+	  $('.ryu-ready').show();
   });
  
 $( document ).keydown(function(event) {
